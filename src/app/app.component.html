@@ -1,18 +1,29 @@
+<mat-card class="main-card">
+  Note D
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput placeholder="Login" [(ngModel)]="login">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput placeholder="Input" [(ngModel)]="password">
+    </mat-form-field>
+    <br>
+  </mat-card-content>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item"><a routerLink="/users" class="btn btn-info"> List Users</a></li>
-            <li class="list-inline-item"><a routerLink="/adduser" class="btn btn-info">Add User</a></li>
-            <li class="list-inline-item"><a routerLink="/exit" class="btn btn-info">Exit</a></li>
-          </ul>
-        </div>
-      </div>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-</div>
+  <mat-card-actions>
+    <button  (click)="addUser()" mat-raised-button color="primary">Add User</button>
+    <button  (click)="getAllUsers()" mat-raised-button color="primary">Find All</button>
+  </mat-card-actions>
+
+</mat-card>
+<br>
+  <mat-card class="mat-card-users" *ngFor="let user of users">
+    <mat-card-content>
+        Login: {{user.login}}<br>
+        Password: {{user.password}}
+    </mat-card-content>
+  </mat-card>
+
+
+
