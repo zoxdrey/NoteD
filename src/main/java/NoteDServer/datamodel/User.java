@@ -1,10 +1,15 @@
 package NoteDServer.datamodel;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Entity;
 
+
+@Entity
 public class User {
-
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private String login;
     private String password;

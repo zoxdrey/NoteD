@@ -4,15 +4,18 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
-
 import NoteDServer.datamodel.User;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import NoteDServer.services.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/api")
 public class UserController {
-
+  @Autowired
+  private UserRepository userRepository;
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
     @CrossOrigin
@@ -34,6 +37,7 @@ public class UserController {
   @PostMapping("/create")
     public void createUser(@RequestBody User newUser) throws IOException {
       writeUserInFile(newUser);
+      userRepository.save(newUser);
     }
 
   @CrossOrigin
