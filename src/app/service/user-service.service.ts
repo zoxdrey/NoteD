@@ -18,6 +18,6 @@ export class UserServiceService {
     return this.http.get<User[]>(this.appUrl + 'getusers');
   }
   addUser(user: User) {
-    return this.http.post<string>(this.appUrl + 'create', user);
+    return this.http.post<string>(this.appUrl + 'createuser', user);
   }
 }

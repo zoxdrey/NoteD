@@ -8,25 +8,28 @@ import javax.persistence.Entity;
 
 @Entity
 public class User {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer id;
-    private String login;
-    private String password;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
+  private String login;
+  private String password;
 
-    public User(String name, String email) {
+  public User() {
+  }
 
-        this.login = name;
-        this.password = email;
-    }
+  public User(String name, String email) {
 
-    public String getLogin() {
-        return login;
-    }
+    this.login = name;
+    this.password = email;
+  }
 
-    public String getPassword() {
-      return password;
-    }
+  public String getLogin() {
+    return login;
+  }
+
+  public String getPassword() {
+    return password;
+  }
 
   public void setLogin(String login) {
     this.login = login;
@@ -41,6 +44,6 @@ public class User {
   }
 
   public Integer getId() {
-      return id;
-    }
+    return id;
+  }
 }

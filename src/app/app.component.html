@@ -5,25 +5,27 @@
       <input matInput placeholder="Login" [(ngModel)]="login">
     </mat-form-field>
     <br>
-    <mat-form-field >
+    <mat-form-field>
       <input matInput placeholder="Input" [(ngModel)]="password">
     </mat-form-field>
     <br>
   </mat-card-content>
-
   <mat-card-actions>
-    <button  (click)="addUser()" mat-raised-button color="primary">Add User</button>
-    <button  (click)="getAllUsers()" mat-raised-button color="primary">Find All</button>
+    <button (click)="addUser()" mat-raised-button color="primary">Add User</button>
+    <button (click)="getAllUsers()" mat-raised-button color="primary">Find All</button>
   </mat-card-actions>
-
+  <nav>
+    <a routerLink="">Главная</a>
+    <a routerLink="/about">О сайте</a>
+  </nav>
 </mat-card>
 <br>
-  <mat-card class="mat-card-users" *ngFor="let user of users">
-    <mat-card-content>
-        Login: {{user.login}}<br>
-        Password: {{user.password}}
-    </mat-card-content>
-  </mat-card>
+<mat-card class="mat-card-content" *ngFor="let article of articles">
+  <mat-card-content>
+    Login: {{article.content}}
+  </mat-card-content>
+</mat-card>
+
 
 
 
