@@ -15,10 +15,9 @@ public class ArticleController {
     @Autowired
     private  ArticleRepository articleRepository;
 
-    @GetMapping(path = "/getarticle")
-    public Article getArticle() {
-
-      return articleRepository.getOne(2);
+    @GetMapping("/getarticle/{id}")
+    public Article getArticle(@PathVariable int id) {
+      return articleRepository.getOne(id);
     }
 
     @PostMapping("/createarticle")

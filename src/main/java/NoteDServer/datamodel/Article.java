@@ -1,10 +1,14 @@
 package NoteDServer.datamodel;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Article {
   @Id
+
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   private String article_content;
@@ -32,3 +36,4 @@ public class Article {
     return id;
   }
 }
+

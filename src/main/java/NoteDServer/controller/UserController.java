@@ -28,9 +28,12 @@ public class UserController {
   }
 
 
-  @RequestMapping("/getuser")
-  public User getUser(@RequestParam(value="id", required=false, defaultValue= "1") int id) {
+  @GetMapping("/getuser/{id}")
+  public User getUser(@PathVariable int id) {
       return userRepository.getOne(id);
-
   }
 }
+
+
+
+
