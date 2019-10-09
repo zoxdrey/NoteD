@@ -1,16 +1,17 @@
 <mat-card class="main-card">
-  Note D
-  <mat-card-content>
-    <mat-form-field>
+  <div>
+    {{article?.title}}</div>
+  <div align="right">
+    {{date}}</div>
+  <br>
+  <div>{{article?.article_content}}</div>
 
-    </mat-form-field>
+
+    <input name="title" [(ngModel)]="title" #articleTitle="ngModel" />
     <br>
-    <mat-form-field >
+    <input name="content"  [(ngModel)]="content"  #articleContent ="ngModel"  rows="10" />
 
-    </mat-form-field>
-    <br>
-  </mat-card-content>
-  <mat-card-actions>
 
-  </mat-card-actions>
-  </mat-card>
+  <br>
+  <button (click)="createArticle( articleTitle, articleContent)">Add Article</button>
+</mat-card>

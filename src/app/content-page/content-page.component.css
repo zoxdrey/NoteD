@@ -1,3 +1,10 @@
-p{
-  padding: 10px;
+mat-card{
+  margin: 10px;
+  text-align: left;
+}
+textarea{
+  height: 200px;
+  width: 100%;
+  background-color: #eeeeee;
+  color: black;
 }

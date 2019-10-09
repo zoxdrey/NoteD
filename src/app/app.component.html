@@ -1,31 +1,10 @@
-<mat-card class="main-card">
-  Note D
-  <mat-card-content>
-    <mat-form-field>
-      <input matInput placeholder="Login" [(ngModel)]="login">
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <input matInput placeholder="Input" [(ngModel)]="password">
-    </mat-form-field>
-    <br>
-  </mat-card-content>
-  <mat-card-actions>
-    <button (click)="addUser()" mat-raised-button color="primary">Add User</button>
-    <button (click)="getAllUsers()" mat-raised-button color="primary">Find All</button>
-  </mat-card-actions>
-  <nav>
-    <a routerLink="">Главная</a>
-    <a routerLink="/about">О сайте</a>
-  </nav>
-</mat-card>
-<br>
-<mat-card class="mat-card-content" *ngFor="let article of articles">
-  <mat-card-content>
-    Login: {{article.content}}
-  </mat-card-content>
-</mat-card>
-
-
+<mat-sidenav-container class="mat-sidenav-container">
+  <mat-sidenav mode="side" opened>
+    <app-main-menu>main menu</app-main-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 

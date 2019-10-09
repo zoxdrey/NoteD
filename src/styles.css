@@ -2,7 +2,74 @@
 
 body {
   text-align: center;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: rgba(103,58,183,0.27);
+  font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+  font-weight: normal;
+  background: #fcfcfc;
 }
 
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h1, h2 {
+  font-weight: lighter;
+}
+
+p {
+  font-size: 14px;
+}
+
+.main-card {
+  display: block;
+  padding: .809em;
+  margin-bottom: .809em;
+  z-index: 200;
+  background-color: #2980B9;
+  text-align: center;
+  padding: .809em;
+  padding-top: 0.809em;
+  padding-right: 0.809em;
+  padding-bottom: 0.809em;
+  padding-left: 0.809em;
+  display: block;
+  color: #fcfcfc;
+  margin-bottom: .809em;
+}
+
+.mat-sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 2em;
+  width: 300px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  min-height: 100%;
+  background: #343131;
+  z-index: 200;
+}
+
+.mat-sidenav  a {
+  display: inline-block;
+  line-height: 18px;
+  padding: .4045em 1.618em;
+  display: block;
+  position: relative;
+  font-size: 90%;
+  color: #b3b3b3;
+}
+.textarea{
+  color: #eeeeee;
+}

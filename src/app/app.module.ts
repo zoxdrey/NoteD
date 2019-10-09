@@ -10,18 +10,22 @@ import {MatCardModule} from '@angular/material/card';
 import { ContentPageComponent } from './content-page/content-page.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
+
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 const appRoutes: Routes = [
-  { path: '', component: AppComponent},
-  { path: '**',  redirectTo: '' }
+  { path: 'about', component: ContentPageComponent},
+  { path: 'article/:id',  component: ContentPageComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentPageComponent,
-    NotFoundComponent
+    MainMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,8 +37,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    CdkTreeModule,
+    MatExpansionModule,
   ],
-  providers: [],
+  providers: [CdkTreeModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
