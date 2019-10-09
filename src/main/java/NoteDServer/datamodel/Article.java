@@ -12,7 +12,7 @@ public class Article {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   private String article_content;
-
+  private String title;
   public Article() {
   }
 
@@ -34,6 +34,14 @@ public class Article {
 
   public int getId() {
     return id;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
   }
 }
 
