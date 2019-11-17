@@ -1,17 +1,19 @@
-<mat-card class="main-card">
-  <div>
-    {{article?.title}}</div>
-  <div align="right">
-    {{date}}</div>
-  <br>
-  <div>{{article?.article_content}}</div>
-
-
-    <input name="title" [(ngModel)]="title" #articleTitle="ngModel" />
-    <br>
-    <input name="content"  [(ngModel)]="content"  #articleContent ="ngModel"  rows="10" />
-
-
-  <br>
-  <button (click)="createArticle( articleTitle, articleContent)">Add Article</button>
-</mat-card>
+<p-panel>
+  <p-header>
+    <app-tool-bar (changeState)="onChanged($event)"></app-tool-bar>
+  </p-header>
+  <p *ngIf="!isEditState">
+ {{article}}
+  </p>
+  <label>
+<textarea
+  rows="5"
+  cols="30"
+  pInputTextarea
+  autoResize="autoResize" *ngIf="isEditState">
+  {{article}}
+</textarea>
+  </label>
+  <p-footer>
+  </p-footer>
+</p-panel>

@@ -1,0 +1,8 @@
+<p-header>
+  <div class="ui-helper-clearfix">
+    <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-info" style="margin-right: .25em;float: left;"></button>
+    <button pButton type="button" icon="pi pi-search" label="Edit" class="ui-button-success" style="margin-right: .25em;float: left;" (click)="change(true)"></button>
+    <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Custom Header</span>
+    <p-splitButton [style]="{'float':'right'}" label="Save" icon="pi pi-check" (onClick)="save()" [model]="items"></p-splitButton>
+  </div>
+</p-header>

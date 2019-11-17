@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ArticleServiceService} from '../service/article-service.service';
 import {User} from "../model/user";
 import {Article} from "../model/article";
@@ -11,15 +11,17 @@ import {NgModel} from "@angular/forms";
   templateUrl: './content-page.component.html',
   styleUrls: ['./content-page.component.css']
 })
-export class ContentPageComponent implements OnInit {
+export class ContentPageComponent implements OnInit{
 
-
-  article: Article;
+  isEditState: boolean = false;
+  clicks:number = 0;
+  article: string =  "The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughters wedding. His beloved son Michael has just come home from the war, but does not intend to become part of his fathers business. Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,"
   id: number;
   content: string;
   title: string = "Заголовок";
   date = new Date().toLocaleString();
   articleId;
+  isArticleEdit:boolean;
   private subscription: Subscription;
 
   constructor(private articleservice: ArticleServiceService,
@@ -31,22 +33,18 @@ export class ContentPageComponent implements OnInit {
   }
 
   getArticle(id:number) {
-    this.articleservice.getArticle(id).subscribe((data: Article) => {
-      this.article = data;
-    });
   }
 
-  createArticle(title: NgModel, article_content:NgModel)
+  createArticle(title: string, content:string)
   {
-    this.article = new Article(title.name, article_content.name)
-    this.articleservice.createArticle(this.article).subscribe((data: Article) => {
-      this.article = data;
-    });
-    console.log(title.name + ":::" + article_content.name);
   }
 
   ngOnInit() {
+  }
 
-    console.log(this.id);
+  onChanged(increased:any){
+    console.log(this.isEditState)
+    increased==true?this.clicks++:this.clicks--;
+    this.isEditState = !this.isEditState;
   }
 }
